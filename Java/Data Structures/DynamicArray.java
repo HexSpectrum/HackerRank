@@ -38,10 +38,8 @@ public class Solution {
                 int queriesItem = Integer.parseInt(queriesRowTempItems[j]);
                 queriesRowItems.add(queriesItem);
             }
-
             queries.add(queriesRowItems);
         }
-
         List<Integer> result = obj.dynamicArray(n, queries);
 
         for (int i = 0; i < result.size(); i++) {
@@ -50,10 +48,8 @@ public class Solution {
             if (i != result.size() - 1) {
                 System.out.println("\n");
             }
-
         }
     }
-
 }
 
 class Result {
@@ -77,9 +73,6 @@ class Result {
     static List<Integer> temp = new ArrayList<>();
 
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
-
-        // Write your code here
-
         ArrayList<Integer>[] seqList = new ArrayList[n];
 
         for (int j = 0; j < n; j++) {
@@ -95,19 +88,6 @@ class Result {
                 sequence.add(queries.get(i)(2));
                 // seq = seqList.get(index); // find the sequenceat that index
 
-                // append y to that seq
-
-                // if (index == 0) {
-                // s0.add(queries.get(i).get(2)); // appending y value of the query to s0
-
-                // // update last Answer
-
-                // }
-                // if (seq == 1) {
-                // // appending y value of the query to s1
-                // s1.add(queries.get(i).get(2));
-                // // seq == 1
-                // }
             } else if (queries.get(i).get(0) == 2) {
                 // queries.get(0).get(0) == 2
                 // when == 2 we dont add anything to the sequences
@@ -123,72 +103,7 @@ class Result {
                         "INDEX: " + index2 + " X: " + x + "LAST ANSWER:  " + lastAnswer + "ELEMENT: " + element);
                 System.out.println("last answer: " + lastAnswer);
                 arr.add(lastAnswer);
-                // seq == 0) {
-                // getYsize %= s0.size();
-
-                // se {
-                // getYsize %= s1.size();
-
-                // }
-
             }
-
-            // if (queries.get(i).get(0) == 2) {
-
-            // }
         }
-
         return arr;
     }
-
-}
-/*
- * class Result {
- * 
- * /* Complete the 'dynamicArray' function below.
- *
- * The function is expected to return an INTEGER_ARRAY. The function accepts
- * following parameters: 1. INTEGER n 2. 2D_INTEGER_ARRAY queries
- * 
- * static int lastAnswer = 0;
- * 
- * static List<Integer> arr = new ArrayList<>();
- * 
- * static List<Integer> s0 = new ArrayList<>(); static List<Integer> s1 = new
- * ArrayList<>(); static int seq = 0;
- * 
- * public static List<Integer> dynamicArray(int n, List<List<Integer>> queries)
- * { int x = 0; // Write your code here
- * 
- * for (int i = 0; i < queries.size(); i++) { x = queries.get(i).get(1); if
- * (queries.get(i).get(0) == 1) { // getting x value of the query seq = (x ^
- * lastAnswer) % n; // either 1 or 0 to find in the next sequence s0 or s1
- * 
- * if (seq == 0) { s0.add(queries.get(i).get(2)); // appending y value of the
- * query to s0
- * 
- * // update last Answer
- * 
- * } if(seq == 1) { // appending y value of the query to s1
- * s1.add(queries.get(i).get(2)); // seq == 1 } } else if(queries.get(i).get(0)
- * == 2){ // queries.get(0).get(0) == 2 // when == 2 we dont add anything to the
- * sequences // y % size of the sequence corresponding to the value of seq i.e.,
- * seq 0 or 1 seq = ((x ^ lastAnswer) % n); int yValue = queries.get(i).get(2);
- * int getYsize = queries.get(i).get(2);
- * 
- * if (seq == 0) { getYsize %= s0.size(); lastAnswer = s0.get(getYsize); //
- * index of sequence
- * 
- * 
- * } else { getYsize %= s1.size(); lastAnswer = s1.get(getYsize);
- * 
- * }
- * 
- * }
- * 
- * if (queries.get(i).get(0) == 2) { arr.add(lastAnswer); } }
- * 
- * return arr; }
- * 
- * }
- */
